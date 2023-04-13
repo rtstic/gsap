@@ -63,7 +63,7 @@ function init() {
             { y: 0, ease: "sine.in", duration: 1 },
             ">-1" // 1 second from end of previous to
           )
-          // finish off with punctuation
+         
         .to(".animation-exception", { autoAlpha: 1});
         // new tween created with updated location, set progress.
         tl.progress(progress);
