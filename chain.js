@@ -5,6 +5,7 @@ function scroll() {
   gsap.set("#title-1", { opacity: 1, duration: 5 });
   gsap.set(".animated-letter-2", { opacity: 0 });
   gsap.set(".animated-letter-3", { opacity: 0 });
+  gsap.set("#cta", { opacity:0})
 
   //animated letters
   const mAnimated = document.querySelector("#m");
@@ -408,10 +409,15 @@ function scroll() {
         },
         "moveletter3"
       );
+      tl.add("cta");
       tl.to(splitType4.chars, {
         opacity: 1,
         duration: 4,
-      });
+      },'cta');
+      tl.to('#cta', {
+        opacity: 1,
+        duration: 4,
+      },'cta');
 
     
 
@@ -445,7 +451,6 @@ function scroll() {
     let boundsRel = staticLetter.getBoundingClientRect();
     let boundsAbs = animatedLetter.getBoundingClientRect();
     // let parentRect = animatedLetter.parentElement.getBoundingClientRect();
-
     return {
       x: "+=" + (boundsRel.left - boundsAbs.left),
       y: "+=" + (boundsRel.top - boundsAbs.top),
