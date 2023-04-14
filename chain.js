@@ -1,5 +1,6 @@
 function scroll() {
   gsap.registerPlugin(ScrollTrigger);
+  gsap.to("#main", { opacity: 1, duration: 3,delay: 1 });
 
   //initialize display only title 1
   gsap.set("#title-1", { opacity: 1, duration: 5 });
@@ -162,14 +163,14 @@ function scroll() {
     //TIMELINE FOR SECTION ONE
     tl.to(splitType1.chars, {
       opacity: 0,
-      duration: 3,
+      duration: 2,
     });
 
     //animate through x,y positions
     tl.add("moveletter").to(
       [mAnimated],
       {
-        duration: 2,
+        duration: 1,
         ...moveLetter(m2Static, mAnimated),
       },
       "moveletter"
@@ -177,7 +178,7 @@ function scroll() {
     tl.to(
       [iAnimated],
       {
-        duration: 2,
+        duration: 1,
         ...moveLetter(i2Static, iAnimated),
       },
       "moveletter"
@@ -185,7 +186,7 @@ function scroll() {
     tl.to(
       [oAnimated],
       {
-        duration: 2,
+        duration: 1,
         ...moveLetter(o2Static, oAnimated),
       },
       "moveletter"
@@ -193,7 +194,7 @@ function scroll() {
     tl.to(
       [tAnimated],
       {
-        duration: 2,
+        duration: 1,
         ...moveLetter(t2Static, tAnimated),
       },
       "moveletter"
@@ -201,7 +202,7 @@ function scroll() {
     tl.to(
       [aAnimated],
       {
-        duration: 2,
+        duration: 1,
         ...moveLetter(a2Static, aAnimated),
       },
       "moveletter"
@@ -209,7 +210,7 @@ function scroll() {
     tl.to(
       [eAnimated],
       {
-        duration: 2,
+        duration: 1,
         ...moveLetter(e2Static, eAnimated),
       },
       "moveletter"
@@ -217,7 +218,7 @@ function scroll() {
     tl.to(
       [sAnimated],
       {
-        duration: 2,
+        duration: 1,
         ...moveLetter(s2Static, sAnimated),
       },
       "moveletter"
@@ -226,7 +227,7 @@ function scroll() {
     tl.add("showletters2");
     tl.to(splitType2.chars, {
       opacity: 1,
-      duration: 4,
+      duration: 2,
     });
     tl.to(
       ".animated-letter",
@@ -256,14 +257,14 @@ function scroll() {
     //TIMELINE FOR SECTION TWO
     tl.to(splitType2.chars, {
       opacity: 0,
-      duration: 4,
+      duration: 2,
     });
 
     //animate through x,y positions
     tl.add("moveletter2").to(
       [m2Animated],
       {
-        duration: 2,
+        duration: 1,
         ...moveLetter(m3Static, m2Animated),
       },
       "moveletter2"
@@ -271,7 +272,7 @@ function scroll() {
     tl.to(
       [i2Animated],
       {
-        duration: 2,
+        duration: 1,
         ...moveLetter(i3Static, i2Animated),
       },
       "moveletter2"
@@ -279,7 +280,7 @@ function scroll() {
     tl.to(
       [o2Animated],
       {
-        duration: 2,
+        duration: 1,
         ...moveLetter(o3Static, o2Animated),
       },
       "moveletter2"
@@ -287,7 +288,7 @@ function scroll() {
     tl.to(
       [t2Animated],
       {
-        duration: 2,
+        duration: 1,
         ...moveLetter(t3Static, t2Animated),
       },
       "moveletter2"
@@ -295,7 +296,7 @@ function scroll() {
     tl.to(
       [a2Animated],
       {
-        duration: 2,
+        duration: 1,
         ...moveLetter(a3Static, a2Animated),
       },
       "moveletter2"
@@ -303,7 +304,7 @@ function scroll() {
     tl.to(
       [e2Animated],
       {
-        duration: 2,
+        duration: 1,
         ...moveLetter(e3Static, e2Animated),
       },
       "moveletter2"
@@ -311,7 +312,7 @@ function scroll() {
     tl.to(
       [s2Animated],
       {
-        duration: 2,
+        duration: 1,
         ...moveLetter(s3Static, s2Animated),
       },
       "moveletter2"
@@ -319,7 +320,7 @@ function scroll() {
 
     tl.to(splitType3.chars, {
       opacity: 1,
-      duration: 4,
+      duration: 2,
     });
     tl.add("showletters3");
     tl.to(
@@ -350,13 +351,13 @@ function scroll() {
       //TIMELINE FOR SECTION THREE
       tl.to(splitType3.chars, {
         opacity: 0,
-        duration: 4,
+        duration: 2,
       });
 
       tl.add("moveletter3").to(
         [m3Animated],
         {
-          duration: 2,
+          duration: 1,
           ...moveLetter(m4Static, m3Animated),
         },
         "moveletter3"
@@ -364,7 +365,7 @@ function scroll() {
       tl.to(
         [i3Animated],
         {
-          duration: 2,
+          duration: 1,
           ...moveLetter(i4Static, i3Animated),
         },
         "moveletter3"
@@ -372,7 +373,7 @@ function scroll() {
       tl.to(
         [o3Animated],
         {
-          duration: 2,
+          duration: 1,
           ...moveLetter(o4Static, o3Animated),
         },
         "moveletter3"
@@ -380,7 +381,7 @@ function scroll() {
       tl.to(
         [t3Animated],
         {
-          duration: 2,
+          duration: 1,
           ...moveLetter(t4Static, t3Animated),
         },
         "moveletter3"
@@ -388,7 +389,7 @@ function scroll() {
       tl.to(
         [a3Animated],
         {
-          duration: 2,
+          duration: 1,
           ...moveLetter(a4Static, a3Animated),
         },
         "moveletter3"
@@ -396,7 +397,7 @@ function scroll() {
       tl.to(
         [e3Animated],
         {
-          duration: 2,
+          duration: 1,
           ...moveLetter(e4Static, e3Animated),
         },
         "moveletter3"
@@ -404,7 +405,7 @@ function scroll() {
       tl.to(
         [s3Animated],
         {
-          duration: 2,
+          duration: 1,
           ...moveLetter(s4Static, s3Animated),
         },
         "moveletter3"
@@ -412,11 +413,11 @@ function scroll() {
       tl.add("cta");
       tl.to(splitType4.chars, {
         opacity: 1,
-        duration: 4,
+        duration: 2,
       },'cta');
       tl.to('#cta', {
         opacity: 1,
-        duration: 4,
+        duration: 2,
       },'cta');
 
     
@@ -442,7 +443,30 @@ function scroll() {
   }
 
   function handleResize() {
-    matchLetterPosition(m2Static, mAnimated);
+    matchLetterPosition(m1Static, mAnimated);
+  matchLetterPosition(i1Static, iAnimated);
+  matchLetterPosition(o1Static, oAnimated);
+  matchLetterPosition(t1Static, tAnimated);
+  matchLetterPosition(a1Static, aAnimated);
+  matchLetterPosition(e1Static, eAnimated);
+  matchLetterPosition(s1Static, sAnimated);
+
+  matchLetterPosition(m2Static, m2Animated);
+  matchLetterPosition(i2Static, i2Animated);
+  matchLetterPosition(o2Static, o2Animated);
+  matchLetterPosition(t2Static, t2Animated);
+  matchLetterPosition(a2Static, a2Animated);
+  matchLetterPosition(e2Static, e2Animated);
+  matchLetterPosition(s2Static, s2Animated);
+
+  matchLetterPosition(m3Static, m3Animated);
+  matchLetterPosition(i3Static, i3Animated);
+  matchLetterPosition(o3Static, o3Animated);
+  matchLetterPosition(t3Static, t3Animated);
+  matchLetterPosition(a3Static, a3Animated);
+  matchLetterPosition(e3Static, e3Animated);
+  matchLetterPosition(s3Static, s3Animated);
+
     createTimeline();
   }
   window.addEventListener("resize", handleResize);
