@@ -288,10 +288,10 @@ function splitSpans(title, className) {
   
     for (let i = 0; i < output.length; i++) {
       if (output[i].nodeName !== 'SPAN') {
-        const newSpan = document.createElement('span');
-        newSpan.classList.add(className);
-        newSpan.textContent = output[i];
-        output[i] = newSpan;
+        const newDiv = document.createElement('div');
+        newDiv.classList.add(className);
+        newDiv.textContent = output[i];
+        output[i] = newDiv;
       }
     }
   
