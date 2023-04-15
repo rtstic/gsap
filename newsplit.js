@@ -1,6 +1,6 @@
 function scroll() {
   gsap.registerPlugin(ScrollTrigger);
-  gsap.to("#main", { opacity: 1, duration: 3,delay: 1 });
+  //gsap.to("#main", { opacity: 1, duration: 3,delay: 1 });
 
   //initialize display only title 1
   gsap.set("#title-1", { opacity: 1, duration: 5 });
