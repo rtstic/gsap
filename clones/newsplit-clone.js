@@ -1,12 +1,6 @@
-
-const title1 = document.getElementById("title-1");
-const title2 = document.getElementById("title-2");
-const title3 = document.getElementById("title-3");
-const title4 = document.getElementById("title-4");
-
 function scroll() {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.to("#main", { opacity: 1, duration: 3,delay: 1 });    
+    gsap.to("#main", { opacity: 1, duration: 3,delay: 1 });
   
     //initialize display only title 1
     gsap.set("#title-1", { opacity: 1, duration: 5 });
@@ -72,12 +66,6 @@ function scroll() {
     const e4Static = document.querySelector("#e-title4");
     const s4Static = document.querySelector("#s-title4");
   
-    //split title sentences to letters
-    // const splitType1 = new SplitType("#title-1", { types: "chars" });
-    // const splitType2 = new SplitType("#title-2", { types: "chars" });
-    // const splitType3 = new SplitType("#title-3", { types: "chars" });
-    // const splitType4 = new SplitType("#title-4", { types: "chars" });
-  
     //put animated letters to the first title on load
     matchLetterPosition(m1Static, mAnimated);
     matchLetterPosition(i1Static, iAnimated);
@@ -137,6 +125,8 @@ function scroll() {
     gsap.set(s4Static, { visibility: "hidden" });
     gsap.set(e4Static, { visibility: "hidden" });
   
+    // declare a timeline outside createTimeline scope
+    // so we can access it in our resize function
     let tl;
   
     function createTimeline() {
@@ -209,7 +199,6 @@ function scroll() {
       tl.add("cta");
         tl.to('.title-4-text', {opacity: 1,duration: 2,},'cta');
         tl.to('#cta', {opacity: 1,duration: 2,},'cta');
-  
       tl.progress(progress);
     }
   
@@ -256,7 +245,7 @@ function scroll() {
     }
   
     window.addEventListener("resize", handleResize);
-   
+  
     function moveLetter(staticLetter, animatedLetter) {
       let boundsRel = staticLetter.getBoundingClientRect();
       let boundsAbs = animatedLetter.getBoundingClientRect();
@@ -266,48 +255,54 @@ function scroll() {
         y: "+=" + (boundsRel.top - boundsAbs.top),
       };
     }
-
   }
-
-function splitSpans(title, className) {
-    const spans = title.querySelectorAll('span');
-    const text = title.textContent;
-    const output = [];
-    let lastIndex = 0;
   
-    spans.forEach(span => {
-      const startIndex = text.indexOf(span.textContent, lastIndex);
-      const endIndex = startIndex + span.textContent.length;
-      const beforeText = text.slice(lastIndex, startIndex);
-      const spanElement = span.cloneNode(true);
-      
-      output.push(beforeText, spanElement);
-      lastIndex = endIndex;
+  
+  window.addEventListener("DOMContentLoaded", function() {
+      splitSpans(title1, 'title-1-text');
+      splitSpans(title2, 'title-2-text');
+      splitSpans(title3, 'title-3-text');
+      splitSpans(title4, 'title-4-text');
+      scroll();
     });
   
-    output.push(text.slice(lastIndex));
   
-    for (let i = 0; i < output.length; i++) {
-      if (output[i].nodeName !== 'SPAN') {
-        const newSpan = document.createElement('span');
-        newSpan.classList.add(className);
-        newSpan.textContent = output[i];
-        output[i] = newSpan;
+  
+  function splitSpans(title, className) {
+      const spans = title.querySelectorAll('span');
+      const text = title.textContent;
+      const output = [];
+      let lastIndex = 0;
+    
+      spans.forEach(span => {
+        const startIndex = text.indexOf(span.textContent, lastIndex);
+        const endIndex = startIndex + span.textContent.length;
+        const beforeText = text.slice(lastIndex, startIndex);
+        const spanElement = span.cloneNode(true);
+        
+        output.push(beforeText, spanElement);
+        lastIndex = endIndex;
+      });
+    
+      output.push(text.slice(lastIndex));
+    
+      for (let i = 0; i < output.length; i++) {
+        if (output[i].nodeName !== 'SPAN') {
+          const newSpan = document.createElement('span');
+          newSpan.classList.add(className);
+          newSpan.textContent = output[i];
+          output[i] = newSpan;
+        }
       }
+    
+      title.textContent = '';
+      output.forEach(element => {
+        title.appendChild(element);
+      });
     }
   
-    title.textContent = '';
-    output.forEach(element => {
-      title.appendChild(element);
-    });
-  }
-
-
-
-  window.addEventListener("DOMContentLoaded", function() {
-    splitSpans(title1, 'title-1-text');
-    splitSpans(title2, 'title-2-text');
-    splitSpans(title3, 'title-3-text');
-    splitSpans(title4, 'title-4-text');
-    scroll();
-  });
+  
+  const title1 = document.getElementById("title-1");
+  const title2 = document.getElementById("title-2");
+  const title3 = document.getElementById("title-3");
+  const title4 = document.getElementById("title-4");
