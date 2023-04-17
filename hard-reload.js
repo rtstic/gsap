@@ -1,12 +1,12 @@
 function scroll() {
   gsap.registerPlugin(ScrollTrigger);
-  gsap.to("#main", { opacity: 1, duration: 3, delay: 4 });
+  gsap.to("#main", { opacity: 1, duration: 0, delay: 0 });
 
   //initialize display only title 1
   gsap.set("#title-1", { opacity: 1, duration: 5 });
   gsap.set(".animated-letter-2", { opacity: 0 });
   gsap.set(".animated-letter-3", { opacity: 0 });
-  gsap.set("#cta", { opacity:0})
+  gsap.set("#cta", { opacity: 0 });
 
   //animated letters 1
   const mAnimated = document.querySelector("#m");
@@ -149,57 +149,141 @@ function scroll() {
     });
 
     //TIMELINE FOR SECTION ONE
-    tl.to('.title-1-text', {opacity: 0,duration: 2,});
+    tl.to(".title-1-text", { opacity: 0, duration: 2 });
     //animate through x,y positions
-    tl.add("moveletter")
-      tl.to([mAnimated],{duration: 1,...moveLetter(m2Static, mAnimated),},"moveletter");
-      tl.to([iAnimated],{duration: 1,...moveLetter(i2Static, iAnimated),},"moveletter");
-      tl.to([oAnimated],{duration: 1,...moveLetter(o2Static, oAnimated),},"moveletter");
-      tl.to([tAnimated],{duration: 1,...moveLetter(t2Static, tAnimated),},"moveletter");
-      tl.to([aAnimated],{duration: 1,...moveLetter(a2Static, aAnimated),},"moveletter");
-      tl.to([eAnimated],{duration: 1,...moveLetter(e2Static, eAnimated),},"moveletter");
-      tl.to([sAnimated],{duration: 1,...moveLetter(s2Static, sAnimated),},"moveletter");
-    
-    tl.to('.title-2-text', {opacity: 1,duration: 2,});
+    tl.add("moveletter");
+    tl.to(
+      [mAnimated],
+      { duration: 1, ...moveLetter(m2Static, mAnimated) },
+      "moveletter"
+    );
+    tl.to(
+      [iAnimated],
+      { duration: 1, ...moveLetter(i2Static, iAnimated) },
+      "moveletter"
+    );
+    tl.to(
+      [oAnimated],
+      { duration: 1, ...moveLetter(o2Static, oAnimated) },
+      "moveletter"
+    );
+    tl.to(
+      [tAnimated],
+      { duration: 1, ...moveLetter(t2Static, tAnimated) },
+      "moveletter"
+    );
+    tl.to(
+      [aAnimated],
+      { duration: 1, ...moveLetter(a2Static, aAnimated) },
+      "moveletter"
+    );
+    tl.to(
+      [eAnimated],
+      { duration: 1, ...moveLetter(e2Static, eAnimated) },
+      "moveletter"
+    );
+    tl.to(
+      [sAnimated],
+      { duration: 1, ...moveLetter(s2Static, sAnimated) },
+      "moveletter"
+    );
+
+    tl.to(".title-2-text", { opacity: 1, duration: 2 });
     tl.add("showletters2");
-      tl.to(".animated-letter",{opacity: 1,duration: 0,},"showletters2");
-      tl.to(".animated-letter",{opacity: 0,duration: 0,},"showletters2");
-      tl.to(".animated-letter-2",{opacity: 1,duration: 0,},"showletters2");
+    tl.to(".animated-letter", { opacity: 1, duration: 0 }, "showletters2");
+    tl.to(".animated-letter", { opacity: 0, duration: 0 }, "showletters2");
+    tl.to(".animated-letter-2", { opacity: 1, duration: 0 }, "showletters2");
 
     //TIMELINE FOR SECTION TWO
-    tl.to('.title-2-text', {opacity: 0,duration: 2,});
+    tl.to(".title-2-text", { opacity: 0, duration: 2 });
     //animate through x,y positions
-    tl.add("moveletter2")
-      tl.to([m2Animated],{duration: 1,...moveLetter(m3Static, m2Animated),},"moveletter2");
-      tl.to([i2Animated],{duration: 1,...moveLetter(i3Static, i2Animated),},"moveletter2");
-      tl.to([o2Animated],{duration: 1,...moveLetter(o3Static, o2Animated),},"moveletter2");
-      tl.to([t2Animated],{duration: 1,...moveLetter(t3Static, t2Animated),},"moveletter2");
-      tl.to([a2Animated],{duration: 1,...moveLetter(a3Static, a2Animated),},"moveletter2");
-      tl.to([e2Animated],{duration: 1,...moveLetter(e3Static, e2Animated),},"moveletter2");
-      tl.to([s2Animated],{duration: 1,...moveLetter(s3Static, s2Animated),},"moveletter2");
+    tl.add("moveletter2");
+    tl.to(
+      [m2Animated],
+      { duration: 1, ...moveLetter(m3Static, m2Animated) },
+      "moveletter2"
+    );
+    tl.to(
+      [i2Animated],
+      { duration: 1, ...moveLetter(i3Static, i2Animated) },
+      "moveletter2"
+    );
+    tl.to(
+      [o2Animated],
+      { duration: 1, ...moveLetter(o3Static, o2Animated) },
+      "moveletter2"
+    );
+    tl.to(
+      [t2Animated],
+      { duration: 1, ...moveLetter(t3Static, t2Animated) },
+      "moveletter2"
+    );
+    tl.to(
+      [a2Animated],
+      { duration: 1, ...moveLetter(a3Static, a2Animated) },
+      "moveletter2"
+    );
+    tl.to(
+      [e2Animated],
+      { duration: 1, ...moveLetter(e3Static, e2Animated) },
+      "moveletter2"
+    );
+    tl.to(
+      [s2Animated],
+      { duration: 1, ...moveLetter(s3Static, s2Animated) },
+      "moveletter2"
+    );
     //show title3
-    tl.to('.title-3-text',{opacity: 1,duration: 2,});
+    tl.to(".title-3-text", { opacity: 1, duration: 2 });
     //show animated letters to the next set -  animated-letters-3
     tl.add("showletters3");
-      tl.to(".animated-letter-2",{opacity: 1,duration: 0,},"showletters3");
-      tl.to(".animated-letter-2",{opacity: 0,duration: 0,},"showletters3");
-      tl.to(".animated-letter-3",{opacity: 1,duration: 0,},"showletters3");
+    tl.to(".animated-letter-2", { opacity: 1, duration: 0 }, "showletters3");
+    tl.to(".animated-letter-2", { opacity: 0, duration: 0 }, "showletters3");
+    tl.to(".animated-letter-3", { opacity: 1, duration: 0 }, "showletters3");
 
     //TIMELINE FOR SECTION THREE
-    tl.to('.title-3-text', {opacity: 0,duration: 2,});
-    //animate through x,y positions 
-    tl.add("moveletter3")
-      tl.to([m3Animated],{duration: 1,...moveLetter(m4Static, m3Animated),},"moveletter3");
-      tl.to([i3Animated],{duration: 1,...moveLetter(i4Static, i3Animated),},"moveletter3");
-      tl.to([o3Animated],{duration: 1,...moveLetter(o4Static, o3Animated),},"moveletter3");
-      tl.to([t3Animated],{duration: 1,...moveLetter(t4Static, t3Animated),},"moveletter3");
-      tl.to([a3Animated],{duration: 1,...moveLetter(a4Static, a3Animated),},"moveletter3");
-      tl.to([e3Animated],{duration: 1,...moveLetter(e4Static, e3Animated),},"moveletter3");
-      tl.to([s3Animated],{duration: 1,...moveLetter(s4Static, s3Animated),},"moveletter3");
+    tl.to(".title-3-text", { opacity: 0, duration: 2 });
+    //animate through x,y positions
+    tl.add("moveletter3");
+    tl.to(
+      [m3Animated],
+      { duration: 1, ...moveLetter(m4Static, m3Animated) },
+      "moveletter3"
+    );
+    tl.to(
+      [i3Animated],
+      { duration: 1, ...moveLetter(i4Static, i3Animated) },
+      "moveletter3"
+    );
+    tl.to(
+      [o3Animated],
+      { duration: 1, ...moveLetter(o4Static, o3Animated) },
+      "moveletter3"
+    );
+    tl.to(
+      [t3Animated],
+      { duration: 1, ...moveLetter(t4Static, t3Animated) },
+      "moveletter3"
+    );
+    tl.to(
+      [a3Animated],
+      { duration: 1, ...moveLetter(a4Static, a3Animated) },
+      "moveletter3"
+    );
+    tl.to(
+      [e3Animated],
+      { duration: 1, ...moveLetter(e4Static, e3Animated) },
+      "moveletter3"
+    );
+    tl.to(
+      [s3Animated],
+      { duration: 1, ...moveLetter(s4Static, s3Animated) },
+      "moveletter3"
+    );
     //show cta
     tl.add("cta");
-      tl.to('.title-4-text', {opacity: 1,duration: 2,},'cta');
-      tl.to('#cta', {opacity: 1,duration: 2,},'cta');
+    tl.to(".title-4-text", { opacity: 1, duration: 2 }, "cta");
+    tl.to("#cta", { opacity: 1, duration: 2 }, "cta");
     tl.progress(progress);
   }
 
@@ -217,32 +301,32 @@ function scroll() {
 
   //for better performance on resize
   function handleResize() {
-  //match letter position of animated lettrs 1
-  matchLetterPosition(m1Static, mAnimated);
-  matchLetterPosition(i1Static, iAnimated);
-  matchLetterPosition(o1Static, oAnimated);
-  matchLetterPosition(t1Static, tAnimated);
-  matchLetterPosition(a1Static, aAnimated);
-  matchLetterPosition(e1Static, eAnimated);
-  matchLetterPosition(s1Static, sAnimated);
-  //match letter position of animated lettrs 2
-  matchLetterPosition(m2Static, m2Animated);
-  matchLetterPosition(i2Static, i2Animated);
-  matchLetterPosition(o2Static, o2Animated);
-  matchLetterPosition(t2Static, t2Animated);
-  matchLetterPosition(a2Static, a2Animated);
-  matchLetterPosition(e2Static, e2Animated);
-  matchLetterPosition(s2Static, s2Animated);
-  //match letter position of animated lettrs 3
-  matchLetterPosition(m3Static, m3Animated);
-  matchLetterPosition(i3Static, i3Animated);
-  matchLetterPosition(o3Static, o3Animated);
-  matchLetterPosition(t3Static, t3Animated);
-  matchLetterPosition(a3Static, a3Animated);
-  matchLetterPosition(e3Static, e3Animated);
-  matchLetterPosition(s3Static, s3Animated);
-  // recreate the timeline so it "knows" where the new element positions are
-  createTimeline();
+    //match letter position of animated lettrs 1
+    matchLetterPosition(m1Static, mAnimated);
+    matchLetterPosition(i1Static, iAnimated);
+    matchLetterPosition(o1Static, oAnimated);
+    matchLetterPosition(t1Static, tAnimated);
+    matchLetterPosition(a1Static, aAnimated);
+    matchLetterPosition(e1Static, eAnimated);
+    matchLetterPosition(s1Static, sAnimated);
+    //match letter position of animated lettrs 2
+    matchLetterPosition(m2Static, m2Animated);
+    matchLetterPosition(i2Static, i2Animated);
+    matchLetterPosition(o2Static, o2Animated);
+    matchLetterPosition(t2Static, t2Animated);
+    matchLetterPosition(a2Static, a2Animated);
+    matchLetterPosition(e2Static, e2Animated);
+    matchLetterPosition(s2Static, s2Animated);
+    //match letter position of animated lettrs 3
+    matchLetterPosition(m3Static, m3Animated);
+    matchLetterPosition(i3Static, i3Animated);
+    matchLetterPosition(o3Static, o3Animated);
+    matchLetterPosition(t3Static, t3Animated);
+    matchLetterPosition(a3Static, a3Animated);
+    matchLetterPosition(e3Static, e3Animated);
+    matchLetterPosition(s3Static, s3Animated);
+    // recreate the timeline so it "knows" where the new element positions are
+    createTimeline();
   }
 
   window.addEventListener("resize", handleResize);
@@ -258,53 +342,51 @@ function scroll() {
   }
 }
 
-
-window.addEventListener("DOMContentLoaded", function() {
-    splitSpans(title1, 'title-1-text');
-    splitSpans(title2, 'title-2-text');
-    splitSpans(title3, 'title-3-text');
-    splitSpans(title4, 'title-4-text');
-    scroll();
-  });
-
-
+window.addEventListener("DOMContentLoaded", function () {
+  (() =>
+    setTimeout(() => {
+      splitSpans(title1, "title-1-text");
+      splitSpans(title2, "title-2-text");
+      splitSpans(title3, "title-3-text");
+      splitSpans(title4, "title-4-text");
+      scroll();
+    }, 3000))();
+});
 
 function splitSpans(title, className) {
-    const spans = title.querySelectorAll('span');
-    const text = title.textContent;
-    const output = [];
-    let lastIndex = 0;
-  
-    spans.forEach(span => {
-      const startIndex = text.indexOf(span.textContent, lastIndex);
-      const endIndex = startIndex + span.textContent.length;
-      const beforeText = text.slice(lastIndex, startIndex);
-      const spanElement = span.cloneNode(true);
-      
-      output.push(beforeText, spanElement);
-      lastIndex = endIndex;
-    });
-  
-    output.push(text.slice(lastIndex));
-  
-    for (let i = 0; i < output.length; i++) {
-      if (output[i].nodeName !== 'SPAN') {
-        const newDiv = document.createElement('div');
-        newDiv.classList.add(className);
-        newDiv.textContent = output[i];
-        output[i] = newDiv;
-      }
+  const spans = title.querySelectorAll("span");
+  const text = title.textContent;
+  const output = [];
+  let lastIndex = 0;
+
+  spans.forEach((span) => {
+    const startIndex = text.indexOf(span.textContent, lastIndex);
+    const endIndex = startIndex + span.textContent.length;
+    const beforeText = text.slice(lastIndex, startIndex);
+    const spanElement = span.cloneNode(true);
+
+    output.push(beforeText, spanElement);
+    lastIndex = endIndex;
+  });
+
+  output.push(text.slice(lastIndex));
+
+  for (let i = 0; i < output.length; i++) {
+    if (output[i].nodeName !== "SPAN") {
+      const newDiv = document.createElement("div");
+      newDiv.classList.add(className);
+      newDiv.textContent = output[i];
+      output[i] = newDiv;
     }
-  
-    title.textContent = '';
-    output.forEach(element => {
-      title.appendChild(element);
-    });
   }
 
+  title.textContent = "";
+  output.forEach((element) => {
+    title.appendChild(element);
+  });
+}
 
 const title1 = document.getElementById("title-1");
 const title2 = document.getElementById("title-2");
 const title3 = document.getElementById("title-3");
 const title4 = document.getElementById("title-4");
-
