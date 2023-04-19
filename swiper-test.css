@@ -1,0 +1,20 @@
+.swiper-slide{
+    height:100dvh !important;
+}
+.swiper{
+    height:100dvh !important;
+}
+.scroll-texts{
+    pointer-events: none;
+}
+.static-span{
+    display: inline-block;
+}
+.title1static
+{
+    display:inline;
+}
+.title2animated
+{
+    display:inline;
+}

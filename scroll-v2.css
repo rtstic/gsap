@@ -1,0 +1,25 @@
+.swiper-slide{
+    height:100dvh !important;
+}
+.swiper{
+    height:100dvh !important;
+}
+.scroll-texts{
+    pointer-events: none;
+}
+#cta{
+    pointer-events: auto !important;
+}
+.static-span{
+    display: inline-block;
+}
+
+.title-1-text{
+    opacity:1;
+    display:inline;
+}
+
+.title-2-text{
+    display:inline;
+    opacity:0;
+}
