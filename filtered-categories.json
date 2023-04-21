@@ -1,0 +1,157 @@
+[
+    {
+        "cat_id": 10,
+        "cat_name": "Analytics",
+        "hours": 2
+    },
+    {
+        "cat_id": 110,
+        "cat_name": "Form builders",
+        "hours": 2
+    },
+    {
+        "cat_id": 73,
+        "cat_name": "Surveys",
+        "hours": 2
+    },
+    {
+        "cat_id": 42,
+        "cat_name": "Tag managers",
+        "hours": 2
+    },
+    {
+        "cat_id": 72,
+        "cat_name": "Appointment scheduling",
+        "hours": 1
+    },
+    {
+        "cat_id": 53,
+        "cat_name": "CRM",
+        "hours": 5
+    },
+    {
+        "cat_id": 52,
+        "cat_name": "Live chat",
+        "hours": 2
+    },
+    {
+        "cat_id": 101,
+        "cat_name": "Recruitment & staffing",
+        "hours": 2
+    },
+    {
+        "cat_id": 75,
+        "cat_name": "Email",
+        "hours": 4
+    },
+    {
+        "cat_id": 89,
+        "cat_name": "Translation",
+        "hours": 4
+    },
+    {
+        "cat_id" : 7,
+        "cat_name": "Photo galleries",
+        "hours" : 2
+    },
+    {
+        "cat_id": 24,
+        "cat_name": "Rich text editors",
+        "hours": 10
+    },
+    {
+        "cat_id": 79,
+        "cat_name": "Geolocation",
+        "hours": 2
+    },
+    {
+        "cat_id": 35,
+        "cat_name": "Maps",
+        "hours": 2
+    },
+    {
+        "cat_id": 38,
+        "cat_name": "Advertising",
+        "hours": 6
+    },
+    {
+        "cat_id": 32,
+        "cat_name": "Marketing automation",
+        "hours": 4
+    },
+    {
+        "cat_id": 90,
+        "cat_name": "Reviews",
+        "hours": 6
+    },
+    {
+        "cat_id": 14,
+        "cat_name": "Video players",
+        "hours": 20
+    },
+    {
+        "cat_id": 69,
+        "cat_name": "Authentication",
+        "hours": 12
+    },
+    {
+        "cat_id": 41,
+        "cat_name": "Payment processors",
+        "hours": 10
+    },
+    {
+        "cat_id": 16,
+        "cat_name": "Security",
+        "hours": 6
+    },
+    {
+        "cat_id": 15,
+        "cat_name": "Comment systems",
+        "hours": 8
+    },
+    {
+        "cat_id": 68,
+        "cat_name": "Accessibility",
+        "hours": 2
+    },
+    {
+        "cat_id": 25,
+        "cat_name": "JavaScript graphics",
+        "hours": 12
+    },
+    {
+        "cat_id": 59,
+        "cat_name": "JavaScript libraries",
+        "hours": 0,
+        "individual_hours": {
+            "Barba.js": 6,
+            "fullPage.js": 6,
+            "Swiper": 4,
+            "Slick" : 4,
+            "ScrollMagic":4
+          }
+    },
+    {
+        "cat_id": 12,
+        "cat_name": "JavaScript frameworks",
+        "hours": 0,
+        "individual_hours": {
+            "GSAP":10
+          }
+    },
+    {
+        "cat_id": 106,
+        "cat_name": "Cross border ecommerce",
+        "ecom" : true
+    },
+    {
+        "cat_id": 108,
+        "cat_name": "Ecommerce frontends",
+        "ecom" : true
+    },
+    {
+        "cat_id": 6,
+        "cat_name": "Ecommerce",
+        "ecom" : true
+    }
+]
