@@ -139,6 +139,21 @@ let visitedTwo = false;
 let visitedThree = false;
 
 document.addEventListener("DOMContentLoaded", () => {
+  const lottieSwiper = new Swiper(".lottie-swiper", {
+    // Optional parameters
+    direction: "vertical",
+    loop: false,
+    spaceBetween: 0,
+    centeredSlides: false,
+    slidesPerView: 1,
+    mousewheel: true,
+    speed: 1500,
+    effect: "slide",
+    slideEffect: {
+      easing: "easeOutQuart",
+    },
+});
+
   //SET SWIPER
   const swiper = new Swiper(".myswiper", {
     // Optional parameters
@@ -163,36 +178,58 @@ document.addEventListener("DOMContentLoaded", () => {
           title1FadeIn();
         }
         if (activeIndex === 1) {
+          lottieSwiper.slideTo(0)
           gsap.to(".title-block-1", { opacity: 1 });
           gsap.to(".title-block-0", { opacity: 0 });
           if (visitedOne) {
             console.log("perform fadin for title2");
             title2fadein();
           } else {
+            this.allowSlideNext = false;
+            this.allowSlidePrev = false;
+          setTimeout(() => {
+          this.allowSlideNext = true;
+          this.allowSlidePrev = true;
+            }, 6000);
             console.log("perform text animtion to reveal title two");
             titile2TextAnimation();
             visitedOne = true;
           }
         }
         if (activeIndex === 2) {
+          lottieSwiper.slideTo(1)
           gsap.to(".title-block-2", { opacity: 1 });
           gsap.to(".title-block-1", { opacity: 0 });
+          
           if (visitedTwo) {
             title3fadein();
             console.log("perfrom fade in for title three");
           } else {
+            this.allowSlideNext = false;
+            this.allowSlidePrev = false;
+          setTimeout(() => {
+          this.allowSlideNext = true;
+          this.allowSlidePrev = true;
+            }, 6000);
             console.log("perfrom text animation to reveal title three");
             titile3TextAnimation();
             visitedTwo = true;
           }
         }
         if (activeIndex === 3) {
+          lottieSwiper.slideTo(2)
           gsap.to(".title-block-3", { opacity: 1 });
           gsap.to(".title-block-2", { opacity: 0 });
           if (visitedThree) {
             title4fadein()
             console.log("perform fade in for title four");
           } else {
+            this.allowSlideNext = false;
+            this.allowSlidePrev = false;
+          setTimeout(() => {
+          this.allowSlideNext = true;
+          this.allowSlidePrev = true;
+            }, 6000);
             titile4TextAnimation()
             console.log("perfrom text animation to reveal title four");
             visitedThree = true;
@@ -306,6 +343,10 @@ gsap.to([title1Nospan], { opacity: 0});
   gsap.to([e1],{ duration: 1, ...moveY(e2Animated, e1),ease: Circ.easeOut,delay:4});
   gsap.to([s1],{ duration: 1, ...moveY(s2Animated, s1),ease: Circ.easeOut,delay:4});
 //play lottie along with y movement
+
+setTimeout(function() {
+  document.getElementById('lottie-1').click();
+}, 3500);
   gsap.to([title2Nospan], { opacity: 1 ,duration:3 ,delay:5});
   gsap.to(".animated-letters-1", { opacity: 0 ,delay:8});
 }
@@ -313,6 +354,7 @@ gsap.to([title1Nospan], { opacity: 0});
 function title3fadein() {
   allZero();
   gsap.to([title3Nospan], { opacity: 1, duration: 1 ,delay:0.5});
+  gsap.set(".animated-letters-3", { opacity: 0 });
 }
 //title3 text animation
 function titile3TextAnimation() {
@@ -341,13 +383,17 @@ function titile3TextAnimation() {
     gsap.to([e2],{ duration: 1, ...moveY(e3Animated, e2),ease: Circ.easeOut,delay:4});
     gsap.to([s2],{ duration: 1, ...moveY(s3Animated, s2),ease: Circ.easeOut,delay:4});
   //play lottie along with y movement
+  setTimeout(function() {
+    document.getElementById('lottie-2').click();
+  }, 3500);
     gsap.to([title3Nospan], { opacity: 1 ,duration:3 ,delay:5});
-    gsap.to(".animated-letters-2", { opacity: 0 ,delay:8});
+    gsap.to(".animated-letters-2", { opacity: 0 ,delay:6});
   }
   //title4 fadein
 function title4fadein() {
   allZero();
   gsap.to([title4Nospan], { opacity: 1, duration: 1 ,delay:0.5});
+  gsap.set(".animated-letters-3", { opacity: 0 });
 }
 //title4 text animation
 function titile4TextAnimation() {
@@ -376,7 +422,10 @@ function titile4TextAnimation() {
     gsap.to([e3],{ duration: 1, ...moveY(e4Animated, e3),ease: Circ.easeOut,delay:4});
     gsap.to([s3],{ duration: 1, ...moveY(s4Animated, s3),ease: Circ.easeOut,delay:4});
   //play lottie along with y movement
-    gsap.to([title4Nospan], { opacity: 1 ,duration:3 ,delay:5});
+  setTimeout(function() {
+    document.getElementById('lottie-3').click();
+  }, 3500);
+    gsap.to([title4Animated], { opacity: 1 ,duration:3 ,delay:5});
     gsap.to(".animated-letters-3", { opacity: 0 ,delay:8});
   }
 
