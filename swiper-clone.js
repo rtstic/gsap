@@ -121,7 +121,6 @@ matchLetterPosition(a3Static, a3);
 matchLetterPosition(e3Static, e3);
 matchLetterPosition(s3Static, s3);
 
-
 //initialize on page load
 gsap.set(".title-block-0", { opacity: 1 });
 gsap.set(".title-block-1", { opacity: 0 });

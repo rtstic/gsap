@@ -4,7 +4,9 @@
 .swiper{
     height:100dvh !important;
 }
-
+#cta{
+    pointer-events:auto !important;
+}
 .scroll-texts{
     pointer-events: none;
 }
