@@ -14,7 +14,7 @@
  const title4Nospan = document.querySelector("#title-4-nospan");//for fade in animation
  //cta
  const buttonCta = document.querySelector("#button")
- const lottieTimeout = 2000;
+ const lottieTimeout = 1500;
 
 function scroll(){
     //initial position 1
