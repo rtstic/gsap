@@ -14,6 +14,7 @@
  const title4Nospan = document.querySelector("#title-4-nospan");//for fade in animation
  //cta
  const buttonCta = document.querySelector("#button")
+ const lottieTimeout = 2000;
 
 function scroll(){
     //initial position 1
@@ -277,7 +278,7 @@ function title1FadeIn() {
     
     setTimeout(function() {
       document.getElementById('lottie-1').click();
-    }, 3500);
+    }, lottieTimeout);
       gsap.to([title2Nospan], { opacity: 1 ,duration:3 ,delay:5});
       gsap.to(".animated-letters-1", { opacity: 0 ,delay:8});
     }
@@ -321,7 +322,7 @@ function title1FadeIn() {
       //play lottie along with y movement
       setTimeout(function() {
         document.getElementById('lottie-2').click();
-      }, 3500);
+      }, lottieTimeout);
         gsap.to([title3Nospan], { opacity: 1 ,duration:3 ,delay:5});
         gsap.to(".animated-letters-2", { opacity: 0 ,delay:6});
       }
@@ -361,7 +362,7 @@ function title1FadeIn() {
       //play lottie along with y movement
       setTimeout(function() {
         document.getElementById('lottie-3').click();
-      }, 3500);
+      }, lottieTimeout);
         gsap.to([title4Animated], { opacity: 1 ,duration:3 ,delay:5});
         gsap.to(".animated-letters-3", { opacity: 0 ,delay:8});
         gsap.to([buttonCta], { opacity: 1 ,delay:5});
