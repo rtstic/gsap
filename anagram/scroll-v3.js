@@ -100,7 +100,7 @@ triggerSwiper.on('slideChange', function () {
     }, lottieTimeout);
     setTimeout(function() {
       document.getElementById('show-footer').click();
-    }, 1800);
+    }, 1500);
     freezeSlide(2000)
     // triggerSwiper.allowSlideNext = false;
     // triggerSwiper.allowSlidePrev = false;
