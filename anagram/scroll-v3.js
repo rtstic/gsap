@@ -104,13 +104,13 @@ triggerSwiper.on('slideChange', function () {
     setTimeout(function() {
       document.getElementById('show-footer').click();
     }, 1500);
-    freezeSlide(2000)
-    // triggerSwiper.allowSlideNext = false;
-    // triggerSwiper.allowSlidePrev = false;
-    // setTimeout(() => {
-    // triggerSwiper.allowSlideNext = false;
-    // triggerSwiper.allowSlidePrev = true;
-    //   }, 2000);
+    //freezeSlide(2000)
+    triggerSwiper.allowSlideNext = false;
+    triggerSwiper.allowSlidePrev = false;
+    setTimeout(() => {
+    triggerSwiper.allowSlideNext = false;
+    triggerSwiper.allowSlidePrev = true;
+    }, 2000);
   }
 });
 
