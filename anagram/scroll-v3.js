@@ -266,5 +266,5 @@ function matchLetterPosition(staticLetter, animatedLetter) {
         init()
         createTimeline()
         freezeSlide(6000)
-      }, 3000))();
+      }, 5000))();
   });
