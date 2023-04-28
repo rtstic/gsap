@@ -98,6 +98,9 @@ triggerSwiper.on('slideChange', function () {
     setTimeout(function() {
       document.getElementById('lottie-3').click();
     }, lottieTimeout);
+    setTimeout(function() {
+      document.getElementById('show-footer').click();
+    }, 2500);
     freezeSlide(2000)
     // triggerSwiper.allowSlideNext = false;
     // triggerSwiper.allowSlidePrev = false;
