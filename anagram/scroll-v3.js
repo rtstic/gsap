@@ -91,6 +91,9 @@ triggerSwiper.on('slideChange', function () {
     setTimeout(function() {
       document.getElementById('lottie-2').click();
     }, lottieTimeout);
+
+      document.getElementById('hide-footer').click();
+   
   }
   if(activeIndex==3){
     lottieSwiper.slideTo(2)
