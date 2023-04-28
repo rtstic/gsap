@@ -100,7 +100,7 @@ triggerSwiper.on('slideChange', function () {
     }, lottieTimeout);
     setTimeout(function() {
       document.getElementById('show-footer').click();
-    }, 2500);
+    }, 2000);
     freezeSlide(2000)
     // triggerSwiper.allowSlideNext = false;
     // triggerSwiper.allowSlidePrev = false;
@@ -268,6 +268,6 @@ function matchLetterPosition(staticLetter, animatedLetter) {
       setTimeout(() => {
         init()
         createTimeline()
-        freezeSlide(6000)
+        freezeSlide(5000)
       }, 3000))();
   });
