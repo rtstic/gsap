@@ -1,0 +1,35 @@
+ /* .swiper-slide{
+    height:80dvh !important;
+}  */
+ .swiper{
+    height:100vh !important;
+} 
+.trigger-scroll {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    z-index: 20;
+  }
+  .title-text {
+    transition-property: all;
+    transition-duration: 1000ms;
+    transition-timing-function: easeOutQuart;
+  }
+  .lottie-scroll {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    z-index: 10;
+  }
+  .gradient-mask{
+    pointer-events: none;
+  }
+.static-span{
+    display:inline-block;
+}
+
+  
