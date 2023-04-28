@@ -208,13 +208,13 @@ function createTimeline(){
   tl = gsap.timeline()
     
   tl.add("moveletter")
-    tl.to([mAnimated],{duration: 1,...moveLetter(m2Static, mAnimated),ease: Circ.easeOut,delay:2},"moveletter");
-    tl.to([iAnimated],{duration: 1,...moveLetter(i2Static, iAnimated),ease: Circ.easeOut,delay:2},"moveletter");
-    tl.to([oAnimated],{duration: 1,...moveLetter(o2Static, oAnimated),ease: Circ.easeOut,delay:2},"moveletter");
-    tl.to([tAnimated],{duration: 1,...moveLetter(t2Static, tAnimated),ease: Circ.easeOut,delay:2},"moveletter");
-    tl.to([aAnimated],{duration: 1,...moveLetter(a2Static, aAnimated),ease: Circ.easeOut,delay:2},"moveletter");
-    tl.to([eAnimated],{duration: 1,...moveLetter(e2Static, eAnimated),ease: Circ.easeOut,delay:2},"moveletter");
-    tl.to([sAnimated],{duration: 1,...moveLetter(s2Static, sAnimated),ease: Circ.easeOut,delay:2},"moveletter");
+    tl.to([mAnimated],{duration: 1,...moveLetter(m2Static, mAnimated),ease: Circ.easeOut,delay:1},"moveletter");
+    tl.to([iAnimated],{duration: 1,...moveLetter(i2Static, iAnimated),ease: Circ.easeOut,delay:1},"moveletter");
+    tl.to([oAnimated],{duration: 1,...moveLetter(o2Static, oAnimated),ease: Circ.easeOut,delay:1},"moveletter");
+    tl.to([tAnimated],{duration: 1,...moveLetter(t2Static, tAnimated),ease: Circ.easeOut,delay:1},"moveletter");
+    tl.to([aAnimated],{duration: 1,...moveLetter(a2Static, aAnimated),ease: Circ.easeOut,delay:1},"moveletter");
+    tl.to([eAnimated],{duration: 1,...moveLetter(e2Static, eAnimated),ease: Circ.easeOut,delay:1},"moveletter");
+    tl.to([sAnimated],{duration: 1,...moveLetter(s2Static, sAnimated),ease: Circ.easeOut,delay:1},"moveletter");
 
   tl.add("opacityfade")
   tl.to('#letters-1',{opacity:0,duration:0},"opacityfade");
