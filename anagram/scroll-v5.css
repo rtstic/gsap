@@ -1,3 +1,16 @@
 .text-sections{
     pointer-events: none;
 }
+.loader-wrapper{
+    pointer-events: none;
+}
+.lottie-sections{
+    pointer-events: none;
+}
+#scroll-btn{
+    pointer-events: auto;
+}
+
+#cta{
+    pointer-events: auto;
+}

@@ -1,10 +1,3 @@
-(function() {
-    var target = $("#target");
-    $("#source").scroll(function() {
-      target.prop("scrollTop", this.scrollTop)
-            .prop("scrollLeft", this.scrollLeft);
-    });
-  })();
 
 
 ////////////////
@@ -79,35 +72,35 @@ function init(){
   gsap.set('#letters-2',{opacity:0})
   }
 
-let tl;
-function createTimeline(){
-  tl = gsap.timeline()
+let tl2;
+function createTimeline2(){
+  tl2 = gsap.timeline()
     
-  tl.add("moveletter")
-    tl.to([mAnimated],{duration: 1,...moveLetter(m2Static, mAnimated),ease: Circ.easeOut,delay:1},"moveletter");
-    tl.to([iAnimated],{duration: 1,...moveLetter(i2Static, iAnimated),ease: Circ.easeOut,delay:1},"moveletter");
-    tl.to([oAnimated],{duration: 1,...moveLetter(o2Static, oAnimated),ease: Circ.easeOut,delay:1},"moveletter");
-    tl.to([tAnimated],{duration: 1,...moveLetter(t2Static, tAnimated),ease: Circ.easeOut,delay:1},"moveletter");
-    tl.to([aAnimated],{duration: 1,...moveLetter(a2Static, aAnimated),ease: Circ.easeOut,delay:1},"moveletter");
-    tl.to([eAnimated],{duration: 1,...moveLetter(e2Static, eAnimated),ease: Circ.easeOut,delay:1},"moveletter");
-    tl.to([sAnimated],{duration: 1,...moveLetter(s2Static, sAnimated),ease: Circ.easeOut,delay:1},"moveletter");
+  tl2.add("moveletter")
+    tl2.to([mAnimated],{duration: 1,...moveLetter(m2Static, mAnimated),ease: Circ.easeOut,delay:1},"moveletter");
+    tl2.to([iAnimated],{duration: 1,...moveLetter(i2Static, iAnimated),ease: Circ.easeOut,delay:1},"moveletter");
+    tl2.to([oAnimated],{duration: 1,...moveLetter(o2Static, oAnimated),ease: Circ.easeOut,delay:1},"moveletter");
+    tl2.to([tAnimated],{duration: 1,...moveLetter(t2Static, tAnimated),ease: Circ.easeOut,delay:1},"moveletter");
+    tl2.to([aAnimated],{duration: 1,...moveLetter(a2Static, aAnimated),ease: Circ.easeOut,delay:1},"moveletter");
+    tl2.to([eAnimated],{duration: 1,...moveLetter(e2Static, eAnimated),ease: Circ.easeOut,delay:1},"moveletter");
+    tl2.to([sAnimated],{duration: 1,...moveLetter(s2Static, sAnimated),ease: Circ.easeOut,delay:1},"moveletter");
 
-  tl.add("opacityfade")
-  tl.to('#letters-1',{opacity:0,duration:0},"opacityfade");
-  tl.to('#letters-2',{opacity:1,duration:0},"opacityfade");
+  tl2.add("opacityfade")
+  tl2.to('#letters-1',{opacity:0,duration:0},"opacityfade");
+  tl2.to('#letters-2',{opacity:1,duration:0},"opacityfade");
 
-  tl.add("moveletter2")
-    tl.to([m2Animated],{duration: 2,...moveLetter(mFinal, m2Animated),ease: Circ.easeOut,delay:0},"moveletter2");
-    tl.to([i2Animated],{duration: 2,...moveLetter(iFinal, i2Animated),ease: Circ.easeOut,delay:0},"moveletter2");
-    tl.to([o2Animated],{duration: 2,...moveLetter(oFinal, o2Animated),ease: Circ.easeOut,delay:0},"moveletter2");
-    tl.to([t2Animated],{duration: 2,...moveLetter(tFinal, t2Animated),ease: Circ.easeOut,delay:0},"moveletter2");
-    tl.to([a2Animated],{duration: 2,...moveLetter(aFinal, a2Animated),ease: Circ.easeOut,delay:0},"moveletter2");
-    tl.to([e2Animated],{duration: 2,...moveLetter(eFinal, e2Animated),ease: Circ.easeOut,delay:0},"moveletter2");
-    tl.to([s2Animated],{duration: 2,...moveLetter(sFinal, s2Animated),ease: Circ.easeOut,delay:0},"moveletter2");
+  tl2.add("moveletter2")
+    tl2.to([m2Animated],{duration: 2,...moveLetter(mFinal, m2Animated),ease: Circ.easeOut,delay:0},"moveletter2");
+    tl2.to([i2Animated],{duration: 2,...moveLetter(iFinal, i2Animated),ease: Circ.easeOut,delay:0},"moveletter2");
+    tl2.to([o2Animated],{duration: 2,...moveLetter(oFinal, o2Animated),ease: Circ.easeOut,delay:0},"moveletter2");
+    tl2.to([t2Animated],{duration: 2,...moveLetter(tFinal, t2Animated),ease: Circ.easeOut,delay:0},"moveletter2");
+    tl2.to([a2Animated],{duration: 2,...moveLetter(aFinal, a2Animated),ease: Circ.easeOut,delay:0},"moveletter2");
+    tl2.to([e2Animated],{duration: 2,...moveLetter(eFinal, e2Animated),ease: Circ.easeOut,delay:0},"moveletter2");
+    tl2.to([s2Animated],{duration: 2,...moveLetter(sFinal, s2Animated),ease: Circ.easeOut,delay:0},"moveletter2");
 
-    tl.to('#title-final',{opacity:1,duration:2})
+    tl2.to('#title-final',{opacity:1,duration:2})
 
-   tl.play()
+   tl2.play()
 }
 
 function matchLetterPosition(staticLetter, animatedLetter) {
@@ -143,6 +136,6 @@ function matchLetterPosition(staticLetter, animatedLetter) {
     (() =>
       setTimeout(() => {
         init()
-        createTimeline()
-      }, 3000))();
+        createTimeline2()
+      }, 4000))();
   });

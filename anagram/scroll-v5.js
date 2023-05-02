@@ -20,6 +20,20 @@ matchPosition(initialPosition,block2)
 matchPosition(preinitialPosition,block3)
 matchPosition(preinitialPosition,block4)
 
+const lottieOne = document.getElementById('lottie-1');
+const lottieTwo = document.getElementById('lottie-2');
+const lottieThree = document.getElementById('lottie-3');
+
+const activeLottie = document.getElementById('lottie-current');
+const nextLottie = document.getElementById('lottie-next');
+const prevLottie = document.getElementById('lottie-prev');
+
+matchPosition(activeLottie,lottieOne)
+matchPosition(nextLottie,lottieTwo)
+matchPosition(nextLottie,lottieThree)
+
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 let tl;
@@ -43,26 +57,32 @@ function createTimeline() {
 
       
       tl.add('scroll1')
-      
+      tl.call(playLottie, [1]);
       tl.to([block1],{ duration: 8, ...moveTo(visitedPosition, block1) },'scroll1');
+     
 
       tl.to([block1],{opacity:0.2,duration:2},'scroll1')
       tl.to([block2],{opacity:1,duration:2},'scroll1')
 
+      tl.call(playLottie, [2]);
       tl.to([block2],{ duration: 20, ...moveTo(visitedPosition, block2),delay:0 },'scroll1');
+      tl.to([lottieOne],{duration:20,...moveTo(prevLottie, lottieOne),delay:6},'scroll1');
 
+      
       tl.to([block2],{opacity:0.2,duration:2,delay:6},'scroll1')
       tl.to([block3],{opacity:1,duration:2,delay:6},'scroll1')
 
-      tl.to([block3],{ duration:36, ...moveTo(visitedPosition,block3),delay:4},'scroll1');
+      tl.call(playLottie, [3]);
 
+      tl.to([block3],{ duration:36, ...moveTo(visitedPosition,block3),delay:4},'scroll1');
+      tl.to([lottieTwo],{duration:30,...moveTo(prevLottie, lottieTwo),delay:8},'scroll1');
+
+   
       tl.to([block3],{opacity:0.2,duration:2,delay:20},'scroll1')
       tl.to([block4],{opacity:1,duration:2,delay:20},'scroll1')
 
       tl.to([block4],{ duration: 24, ...moveTo(finalPosition,block4),delay:14},'scroll1')
-
-
-      
+      tl.to([lottieThree],{duration:20,...moveTo(activeLottie, lottieThree),delay:18},'scroll1');
 
       tl.progress(progress);
     }
@@ -85,6 +105,10 @@ function matchPosition(targetPosition, sourcePosition) {
     };
   }
 
+  function playLottie(number){
+        document.getElementById(`lottieplay-${number}`).click();
+  }
+
 function handleResize(){
     matchPosition(finalPosition,block1)
     matchPosition(initialPosition,block2)
@@ -95,6 +119,63 @@ window.addEventListener("resize", handleResize);
 window.addEventListener("DOMContentLoaded", function () {
     (() =>
       setTimeout(() => {
-        createTimeline()
+        if(this.window.innerWidth<990){
+        console.log('mobile');
+        mobileScroll()
+        }
+        else{
+          createTimeline()
+        }
       }, 3000))();
   });
+
+  // function scrollButton(value){
+  //   if (value === true){
+  //     document.getElementById('show-button').click();
+  //   }
+  //   else{
+  //     document.getElementById('hide-button').click();
+  //   }
+  // }
+
+  // const myDiv = document.getElementById("track");
+  // const scrollBtn =  document.getElementById('show-button')
+
+  // ScrollTrigger.create({
+  //   trigger: myDiv,
+  //   start: "top 90%",
+  //   end: "bottom",
+  //   onEnter: () => scrollBtn.style.display = "none",
+  //   onLeaveBack: () => scrollBtn.style.display = "block",
+  // });
+
+
+function mobileScroll(){
+    const mobtarOne = document.getElementById("titleblock-1");
+    const mobtarTwo = document.getElementById("titleblock-2");
+    const mobtarThree = document.getElementById("titleblock-3");
+    const mobtarFour = document.getElementById("titleblock-4");
+
+    const mobchildOne = document.getElementById("mobile-1");
+    const mobchildTwo = document.getElementById("mobile-2");
+    const mobchildThree = document.getElementById("mobile-3");
+    const mobchildFour = document.getElementById("mobile-4");
+  
+    function moveBlock() {
+      if (window.innerWidth < 990) {
+        mobchildOne.appendChild(mobtarOne);
+        mobchildTwo.appendChild(mobtarTwo);
+        mobchildThree.appendChild(mobtarThree);
+        mobchildFour.appendChild(mobtarFour)
+      }
+    }
+  
+    moveBlock(); // Initial check
+  
+    gsap.set([block1,block2,block3,block4],{opacity:1})
+    
+    window.addEventListener("resize", function() {
+      moveBlock();
+    
+    });
+  }
