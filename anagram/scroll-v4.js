@@ -206,8 +206,11 @@ function matchLetterPosition(staticLetter, animatedLetter) {
     (() =>
       setTimeout(() => {     
         init()  
-        createTimeline2()
-        createTimeline3()
+        createTimeline2();
+        if(this.window.innerWidth<990){
+          init2();
+        createTimeline3();
+        }
       }, 4000))();
   });
 
