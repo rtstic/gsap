@@ -13,7 +13,7 @@ gsap.set(finalPosition,{visibility:'hidden'});
 gsap.set(initialPosition,{visibility:"hidden"});
 gsap.set(preinitialPosition,{visibility:"hidden"});
 
-gsap.set([block2,block3,block4],{opacity:0.2})
+
 
 matchPosition(finalPosition,block1)
 matchPosition(initialPosition,block2)
@@ -121,9 +121,10 @@ window.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         if(this.window.innerWidth<990){
         console.log('mobile');
-        mobileScroll()
+        //mobileScroll()
         }
         else{
+          gsap.set([block2,block3,block4],{opacity:0.2})
           createTimeline()
         }
       }, 3000))();
@@ -201,3 +202,7 @@ window.addEventListener("DOMContentLoaded", function () {
   
         mtl.progress(progress);
       }
+
+function mobileScroll2(){
+
+}

@@ -131,20 +131,14 @@ function matchLetterPosition(staticLetter, animatedLetter) {
       x: "+=" + (boundsRel.left - boundsAbs.left),
     }; 
   }
-  const moveDiv = document.getElementById('titleblock-1')
-  const parentElement = document.getElementById('text-space')
-
- 
+  
   window.addEventListener("DOMContentLoaded", function () {
     (() =>
       setTimeout(() => {
-        if(this.window.innerWidth<990){
-          console.log('mobile');
-          parentElement.appendChild(moveDiv)
-          }      
-        init()  
+        init()
         createTimeline2()
       }, 4000))();
   });
 
- 
+  
+   
