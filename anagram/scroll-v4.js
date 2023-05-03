@@ -80,6 +80,10 @@ const a2Animated2 = document.querySelector("#a2-mob");
 const e2Animated2 = document.querySelector("#e2-mob");
 const s2Animated2 = document.querySelector("#s2-mob");
 
+gsap.set('#title-final',{opacity:0})
+gsap.set('#letters-1',{opacity:0})
+gsap.set('#letters-2',{opacity:0})
+
 function init(){
     matchLetterPosition(m1Static, mAnimated);
     matchLetterPosition(i1Static, iAnimated);
