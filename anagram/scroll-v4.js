@@ -42,6 +42,44 @@ const a2Animated = document.querySelector("#a2");
 const e2Animated = document.querySelector("#e2");
 const s2Animated = document.querySelector("#s2");
 
+//mobile declaration
+const mFinalmobile = document.querySelector("#m-final-mobile");
+const iFinalmobile = document.querySelector("#i-final-mobile");
+const oFinalmobile = document.querySelector("#o-final-mobile");
+const tFinalmobile = document.querySelector("#t-final-mobile");
+const aFinalmobile = document.querySelector("#a-final-mobile");
+const eFinalmobile = document.querySelector("#e-final-mobile");
+const sFinalmobile = document.querySelector("#s-final-mobile");
+const m11Static = document.querySelector("#m-1-1");
+const i11Static = document.querySelector("#i-1-1");
+const o11Static = document.querySelector("#o-1-1");
+const t11Static = document.querySelector("#t-1-1");
+const a11Static = document.querySelector("#a-1-1");
+const e11Static = document.querySelector("#e-1-1");
+const s11Static = document.querySelector("#s-1-1");
+const m22Static = document.querySelector("#m-2-2");
+const i22Static = document.querySelector("#i-2-2");
+const o22Static = document.querySelector("#o-2-2");
+const t22Static = document.querySelector("#t-2-2");
+const a22Static = document.querySelector("#a-2-2");
+const e22Static = document.querySelector("#e-2-2");
+const s22Static = document.querySelector("#s-2-2");
+const mAnimated2 = document.querySelector("#m-mob");
+const iAnimated2 = document.querySelector("#i-mob");
+const oAnimated2 = document.querySelector("#o-mob");
+const tAnimated2 = document.querySelector("#t-mob");
+const aAnimated2 = document.querySelector("#a-mob");
+const eAnimated2 = document.querySelector("#e-mob");
+const sAnimated2 = document.querySelector("#s-mob");
+
+const m2Animated2 = document.querySelector("#m2-mob");
+const i2Animated2 = document.querySelector("#i2-mob");
+const o2Animated2 = document.querySelector("#o2-mob");
+const t2Animated2 = document.querySelector("#t2-mob");
+const a2Animated2 = document.querySelector("#a2-mob");
+const e2Animated2 = document.querySelector("#e2-mob");
+const s2Animated2 = document.querySelector("#s2-mob");
+
 function init(){
     matchLetterPosition(m1Static, mAnimated);
     matchLetterPosition(i1Static, iAnimated);
@@ -72,7 +110,36 @@ function init(){
   gsap.set('#letters-2',{opacity:0})
   }
 
-let tl2;
+function init2(){
+  matchLetterPosition(m11Static, mAnimated2);
+  matchLetterPosition(i11Static, iAnimated2);
+  matchLetterPosition(o11Static, oAnimated2);
+  matchLetterPosition(t11Static, tAnimated2);
+  matchLetterPosition(a11Static, aAnimated2);
+  matchLetterPosition(e11Static, eAnimated2);
+  matchLetterPosition(s11Static, sAnimated2); 
+
+  matchLetterPosition(m22Static, m2Animated2);
+  matchLetterPosition(i22Static, i2Animated2);
+  matchLetterPosition(o22Static, o2Animated2);
+  matchLetterPosition(t22Static, t2Animated2);
+  matchLetterPosition(a22Static, a2Animated2);
+  matchLetterPosition(e22Static, e2Animated2);
+  matchLetterPosition(s22Static, s2Animated2);
+
+  gsap.set(mFinalmobile, { visibility: "hidden" });
+  gsap.set(iFinalmobile, { visibility: "hidden" });
+  gsap.set(oFinalmobile, { visibility: "hidden" });
+  gsap.set(tFinalmobile, { visibility: "hidden" });
+  gsap.set(aFinalmobile, { visibility: "hidden" });
+  gsap.set(sFinalmobile, { visibility: "hidden" });
+  gsap.set(eFinalmobile, { visibility: "hidden" });
+  gsap.set('#title-final-mobile',{opacity:0})
+  gsap.set('#letters-1-mobile',{opacity:0})
+  gsap.set('#letters-2-mobile',{opacity:0})
+}
+
+let tl2 , tl3;
 function createTimeline2(){
   tl2 = gsap.timeline()
     tl2.to('#letters-1',{opacity:1,duration:1})
@@ -137,14 +204,40 @@ function matchLetterPosition(staticLetter, animatedLetter) {
  
   window.addEventListener("DOMContentLoaded", function () {
     (() =>
-      setTimeout(() => {
-        if(this.window.innerWidth<990){
-          console.log('mobile');
-          parentElement.appendChild(moveDiv)
-          }      
+      setTimeout(() => {     
         init()  
         createTimeline2()
+        createTimeline3()
       }, 4000))();
   });
 
  
+  function createTimeline3(){
+    tl3 = gsap.timeline()
+      tl3.to('#letters-1-mobile',{opacity:1,duration:1})
+    tl3.add("moveletter")
+      tl3.to([mAnimated2],{duration: 1,...moveLetter(m22Static, mAnimated2),ease: Circ.easeOut,delay:1},"moveletter");
+      tl3.to([iAnimated2],{duration: 1,...moveLetter(i22Static, iAnimated2),ease: Circ.easeOut,delay:1},"moveletter");
+      tl3.to([oAnimated2],{duration: 1,...moveLetter(o22Static, oAnimated2),ease: Circ.easeOut,delay:1},"moveletter");
+      tl3.to([tAnimated2],{duration: 1,...moveLetter(t22Static, tAnimated2),ease: Circ.easeOut,delay:1},"moveletter");
+      tl3.to([aAnimated2],{duration: 1,...moveLetter(a22Static, aAnimated2),ease: Circ.easeOut,delay:1},"moveletter");
+      tl3.to([eAnimated2],{duration: 1,...moveLetter(e22Static, eAnimated2),ease: Circ.easeOut,delay:1},"moveletter");
+      tl3.to([sAnimated2],{duration: 1,...moveLetter(s22Static, sAnimated2),ease: Circ.easeOut,delay:1},"moveletter");
+  
+    tl3.add("opacityfade")
+    tl3.to('#letters-1-mobile',{opacity:0,duration:0},"opacityfade");
+    tl3.to('#letters-2-mobile',{opacity:1,duration:0},"opacityfade");
+  
+    tl3.add("moveletter2")
+      tl3.to([m2Animated2],{duration: 2,...moveLetter(mFinalmobile, m2Animated2),ease: Circ.easeOut,delay:0},"moveletter2");
+      tl3.to([i2Animated2],{duration: 2,...moveLetter(iFinalmobile, i2Animated2),ease: Circ.easeOut,delay:0},"moveletter2");
+      tl3.to([o2Animated2],{duration: 2,...moveLetter(oFinalmobile, o2Animated2),ease: Circ.easeOut,delay:0},"moveletter2");
+      tl3.to([t2Animated2],{duration: 2,...moveLetter(tFinalmobile, t2Animated2),ease: Circ.easeOut,delay:0},"moveletter2");
+      tl3.to([a2Animated2],{duration: 2,...moveLetter(aFinalmobile, a2Animated2),ease: Circ.easeOut,delay:0},"moveletter2");
+      tl3.to([e2Animated2],{duration: 2,...moveLetter(eFinalmobile, e2Animated2),ease: Circ.easeOut,delay:0},"moveletter2");
+      tl2.to([s2Animated2],{duration: 2,...moveLetter(sFinalmobile, s2Animated2),ease: Circ.easeOut,delay:0},"moveletter2");
+  
+      tl3.to('#title-final-mobile',{opacity:1,duration:2})
+  
+     tl3.play()
+  }
