@@ -150,32 +150,54 @@ window.addEventListener("DOMContentLoaded", function () {
   // });
 
 
-function mobileScroll(){
-    const mobtarOne = document.getElementById("titleblock-1");
-    const mobtarTwo = document.getElementById("titleblock-2");
-    const mobtarThree = document.getElementById("titleblock-3");
-    const mobtarFour = document.getElementById("titleblock-4");
-
-    const mobchildOne = document.getElementById("mobile-1");
-    const mobchildTwo = document.getElementById("mobile-2");
-    const mobchildThree = document.getElementById("mobile-3");
-    const mobchildFour = document.getElementById("mobile-4");
+  let mtl;
   
-    function moveBlock() {
-      if (window.innerWidth < 990) {
-        mobchildOne.appendChild(mobtarOne);
-        mobchildTwo.appendChild(mobtarTwo);
-        mobchildThree.appendChild(mobtarThree);
-        mobchildFour.appendChild(mobtarFour)
+  function mobileScroll() {
+        // if a timeline exists, save its progress and kill it
+        let progress = mtl ? mtl.progress() : 0;
+        mtl && mtl.progress(0).kill();
+    
+        mtl && mtl.progress(0).kill();
+    
+        // create our timeline
+        mtl = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#track",
+            start: "top top", // when top of trigger div is at top of viewport
+            end: "bottom bottom", // when bottom of trigger div is at bottom of viewport
+            scrub: 2, // link to scroll
+          },
+        });
+  
+        
+        mtl.add('scroll1')
+        mtl.call(playLottie, [1]);
+        mtl.to([block1],{ duration: 8, ...moveTo(visitedPosition, block1) },'scroll1');
+       
+        
+        mtl.to([block1],{opacity:0.2,duration:2},'scroll1')
+        mtl.to([block2],{opacity:1,duration:2},'scroll1')
+  
+        
+        mtl.to([block2],{ duration: 18, ...moveTo(visitedPosition, block2),delay:0 },'scroll1');
+        mtl.call(playLottie, [2] );
+        mtl.to([lottieOne],{duration:20,...moveTo(prevLottie, lottieOne),delay:8},'scroll1');
+  
+        
+        mtl.to([block2],{opacity:0.2,duration:2,delay:6},'scroll1')
+        mtl.to([block3],{opacity:1,duration:2,delay:10},'scroll1')
+  
+        mtl.call(playLottie, [3]);
+  
+        mtl.to([block3],{ duration:24, ...moveTo(visitedPosition,block3),delay:6},'scroll1');
+        mtl.to([lottieTwo],{duration:30,...moveTo(prevLottie, lottieTwo),delay:10},'scroll1');
+  
+     
+        mtl.to([block3],{opacity:0.2,duration:2,delay:18},'scroll1')
+        mtl.to([block4],{opacity:1,duration:2,delay:22},'scroll1')
+  
+        mtl.to([block4],{ duration: 24, ...moveTo(finalPosition,block4),delay:15},'scroll1')
+        mtl.to([lottieThree],{duration:20,...moveTo(activeLottie, lottieThree),delay:18},'scroll1');
+  
+        mtl.progress(progress);
       }
-    }
-  
-    moveBlock(); // Initial check
-  
-    gsap.set([block1,block2,block3,block4],{opacity:1})
-    
-    window.addEventListener("resize", function() {
-      moveBlock();
-    
-    });
-  }

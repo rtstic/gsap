@@ -68,14 +68,14 @@ function init(){
   gsap.set(eFinal, { visibility: "hidden" });
 
   gsap.set('#title-final',{opacity:0})
-  gsap.set('#letters-1',{opacity:1})
+  gsap.set('#letters-1',{opacity:0})
   gsap.set('#letters-2',{opacity:0})
   }
 
 let tl2;
 function createTimeline2(){
   tl2 = gsap.timeline()
-    
+    tl2.to('#letters-1',{opacity:1,duration:1})
   tl2.add("moveletter")
     tl2.to([mAnimated],{duration: 1,...moveLetter(m2Static, mAnimated),ease: Circ.easeOut,delay:1},"moveletter");
     tl2.to([iAnimated],{duration: 1,...moveLetter(i2Static, iAnimated),ease: Circ.easeOut,delay:1},"moveletter");
