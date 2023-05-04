@@ -215,7 +215,7 @@ function matchLetterPosition(staticLetter, animatedLetter) {
           init2();
         createTimeline3();
         }
-        document.body.style.overflow = 'auto';
+       
       }, 2500))();
   });
 
