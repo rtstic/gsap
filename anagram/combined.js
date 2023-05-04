@@ -1,4 +1,5 @@
 console.log('script is running');
+document.documentElement.style.overflow = 'hidden';
 
 ////////////////
 
@@ -172,6 +173,7 @@ function createTimeline2(){
     tl2.to('#title-final',{opacity:1,duration:2})
 
    tl2.play()
+   document.documentElement.style.overflow = 'auto';
 }
 
 function matchLetterPosition(staticLetter, animatedLetter) {
