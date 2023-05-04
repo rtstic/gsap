@@ -1,4 +1,4 @@
-document.body.style.overflow = 'hidden';
+console.log('script is running');
 
 ////////////////
 
