@@ -1,6 +1,6 @@
 console.log('script is running');
 
-document.getElementById('disable').click();
+
 ////////////////
 
 const mFinal = document.querySelector("#m-final");
@@ -373,6 +373,8 @@ function handleResize(){
 }
 window.addEventListener("resize", handleResize);
 
+
+
 window.addEventListener("DOMContentLoaded", function () {
     (() =>
       setTimeout(() => {
@@ -383,6 +385,7 @@ window.addEventListener("DOMContentLoaded", function () {
         else{
           gsap.set([block2,block3,block4],{opacity:0.2})
           createTimeline()
+          allowScroll()
         }
       }, 3000))();
   });
@@ -443,4 +446,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
 function mobileScroll2(){
 
+}
+
+function allowScroll() {
+  setTimeout(function() {
+    document.getElementById('when-visible').style.display='none'
+  }, 5000);
 }
